@@ -13,4 +13,7 @@ E-mail : geethahorangala@gmail.com
 
 This task contains a simple C program for calculating the sum of n integers, along with its compiled output and the equivalent RISC-V assembly code. The entire setup was performed on an Ubuntu-based Virtual Machine (VM) created using VirtualBox.
 
-# C Code for Calculatin Sum of N integers:![sum of n numbers _c code](https://github.com/user-attachments/assets/6e7eaf81-d510-4d00-a846-57ce3282af54)
+# Task 2: RISC-V O1 and Ofast Optimization Analysis
+# Overview
+
+This task involves a simple C program for swapping two numbers, along with its compiled output and the corresponding RISC-V assembly code. Additionally, the program is executed using the GCC compiler with O1 and Ofast optimization levels. Furthermore, a register-level analysis is conducted using Spike, providing insights into the impact of these optimizations on execution performance.
