@@ -4,6 +4,7 @@ This internship program focuses on RISCV-V based architecture.
 
 # Participant Information
 Name : Geetha H
+
 E-mail : geethahorangala@gmail.com
 
 # Task 1 : Virtual Machine Setup & RISC-V Code Execution
@@ -61,7 +62,7 @@ Spike is the official RISC-V ISA simulator, designed for testing and running RIS
 # Task 3 : RISC-V Instruction Formats
 # Overview
 
-# 1.The RISC-V assembly instruction : lui a0, 0x2b
+# 1. The RISC-V Assembly Instruction : lui a0, 0x2b
 ![Screenshot from 2025-04-02 19-16-04](https://github.com/user-attachments/assets/1c72468a-783f-48e0-9a37-0fd3e9ea6174)
 * Instruction Type : lui (Load Upper Immediate) is an U-type (Upper Immediate) instruction in the RISC-V ISA.
 * lui (Load Upper Immediate): Loads a 20-bit immediate value into the upper 20 bits of a register, setting the lower 12 bits to zero.
@@ -70,7 +71,7 @@ Spike is the official RISC-V ISA simulator, designed for testing and running RIS
 * 32-bit Instruction Representation : 00000000000000000000 01010 0110111
 ![Screenshot 2025-04-02 220433](https://github.com/user-attachments/assets/085fced6-d648-42fc-8a1e-1964fb1ba9e8)
  
-# 2.The RISC-V Assembly Instruction : addi sp, sp, -32
+# 2. The RISC-V Assembly Instruction : addi sp, sp, -32
 ![Screenshot from 2025-04-02 19-16-15](https://github.com/user-attachments/assets/726c1906-9b59-4b6d-961b-a6189a8f3e20)
 * Instruction Type : addi (Add Immediate) is an I-type (Immediate) instruction in the RISC-V ISA.
 * addi (Add Immediate) is used to add an immediate value (a constant) to a register.
@@ -79,7 +80,7 @@ Spike is the official RISC-V ISA simulator, designed for testing and running RIS
 * 32-bit Instruction Representation : 111111100000 00010 000 00010 0010011
 ![Screenshot 2025-04-02 205939](https://github.com/user-attachments/assets/8494c6da-343e-47cc-a8df-34964ce75108)
 
-# 3.The RISC-V Assembly Instruction : sd ra, 24(sp)
+# 3. The RISC-V Assembly Instruction : sd ra, 24(sp)
 ![Screenshot from 2025-04-02 19-16-36](https://github.com/user-attachments/assets/358e8e11-bdac-44b3-83c7-9db75b9dedf0)
 * Instruction Type : sd (Store Double Word) is an S-type (Store) instruction in the RISC-V ISA.
 * sd (Store Double Word) is used to add an immediate value (a constant) to a register.
@@ -97,6 +98,7 @@ Spike is the official RISC-V ISA simulator, designed for testing and running RIS
 * 10468 <printf>: 10468 is the memory address of printf in this specific compiled program. The <printf> label shows that this jump is calling the standard C printf function.
 * Here, it saves the return address (PC + 4) into the register ra (x1) and jumps to the address 10468 (0x28E4 in hex), which corresponds to printf.
 * 32-bit Instruction Representation : 0 0001110010 1 00000010  00001 1101111
+![Screenshot 2025-04-02 222830](https://github.com/user-attachments/assets/551a48ef-28ed-499f-8bf8-fc6773a909e9)
 
 # 5.The RISC-V Assembly Instruction : lw a2, 12(sp)
 ![Screenshot from 2025-04-02 19-17-26](https://github.com/user-attachments/assets/c2ce4284-75f3-4735-9523-d4020a1031dc)
