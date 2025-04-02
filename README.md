@@ -91,7 +91,6 @@ Spike is the official RISC-V ISA simulator, designed for testing and running RIS
 * 32-bit Instruction Representation : 0000000 00001 00010 011 11000 0100011
 ![Screenshot 2025-04-02 232454](https://github.com/user-attachments/assets/35ee32e8-f0a3-4eb8-b801-b5a7ef339150)
 
-
 # 4. The RISC-V Assembly Instruction : jal ra,10468 <printf>
 ![Screenshot from 2025-04-02 19-17-00](https://github.com/user-attachments/assets/f3790890-a899-4492-884d-3c419ae840a7)
 * Instruction Type : jal (Jump And Link) is an J-type (Jump) instruction in the RISC-V ISA.
@@ -114,8 +113,7 @@ Spike is the official RISC-V ISA simulator, designed for testing and running RIS
 * 32-bit Instruction Representation : 000000001100 01100 010 00010 0000011
 ![Screenshot 2025-04-02 233659](https://github.com/user-attachments/assets/3393b2c1-d1cd-4b68-b2d0-04d6e7ff796a)
 
-
-# 6.The RISC-V Assembly Instruction : mv a2,a5
+# 6. The RISC-V Assembly Instruction : mv a2,a5
 ![Screenshot from 2025-04-02 19-17-39](https://github.com/user-attachments/assets/5d92d130-ec7c-4cb1-884a-12888729f175)
 * Instruction Type : addi (Add Immediate) is an I-type (Immediate) instruction in the RISC-V ISA.
 * addi (Add Immediate) is used to add an immediate value (a constant) to a register.
