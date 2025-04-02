@@ -86,9 +86,10 @@ Spike is the official RISC-V ISA simulator, designed for testing and running RIS
 * sd (Store DoubleWord) is used to store a 64-bit (doubleword) value from a register into memory. It is part of the RV64I instruction set (only available in 64-bit RISC-V).
 * sp: Register x2, commonly used as stack pointer.
 * ra (Return Address Register): Register x1 stores the data.
+* 24 : Immediate value to add with sp.
 * Here, the instruction sd ra, 24(sp) stores the 64-bit value in ra (x1) into memory at sp + 24.
 * 32-bit Instruction Representation : 0000000 00001 00010 011 11000 0100011
-![Screenshot 2025-04-02 231406](https://github.com/user-attachments/assets/fe092b18-ca9e-4741-95bb-13cb4e035173)
+![Screenshot 2025-04-02 232454](https://github.com/user-attachments/assets/35ee32e8-f0a3-4eb8-b801-b5a7ef339150)
 
 
 # 4. The RISC-V Assembly Instruction : jal ra,10468 <printf>
@@ -103,12 +104,13 @@ Spike is the official RISC-V ISA simulator, designed for testing and running RIS
 * 32-bit Instruction Representation : 0 0001110010 1 00000010  00001 1101111
 ![Screenshot 2025-04-02 222830](https://github.com/user-attachments/assets/551a48ef-28ed-499f-8bf8-fc6773a909e9)
 
-# 5.The RISC-V Assembly Instruction : lw a2, 12(sp)
+# 5. The RISC-V Assembly Instruction : lw a2, 12(sp)
 ![Screenshot from 2025-04-02 19-17-26](https://github.com/user-attachments/assets/c2ce4284-75f3-4735-9523-d4020a1031dc)
-* Instruction Type : addi (Add Immediate) is an I-type (Immediate) instruction in the RISC-V ISA.
-* addi (Add Immediate) is used to add an immediate value (a constant) to a register.
+* Instruction Type : lw (Load Word) is an I-type (Immediate) instruction in the RISC-V ISA.
+* lw (Load Word) is used to load a 32-bit word (4 bytes) from memory into a register in the RV32I and RV64I instruction sets. It is typically used for loading data from memory into registers.
 * sp: Register x2, commonly used as stack pointer.
-* -32 : Immediate value to add with sp. 
+* 12 : Immediate value to add with sp.
+* The instruction lw a2, 12(sp) loads a 32-bit word (4 bytes) from memory at sp + 12 into the register a2. 
 * 32-bit Instruction Representation : 111111100000 00010 000 00010 0010011
 
 # 6.The RISC-V Assembly Instruction : mv a2,a5
