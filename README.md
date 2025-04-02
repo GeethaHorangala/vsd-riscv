@@ -82,9 +82,9 @@ Spike is the official RISC-V ISA simulator, designed for testing and running RIS
 
 # 3. The RISC-V Assembly Instruction : sd ra, 24(sp)
 ![Screenshot from 2025-04-02 19-16-36](https://github.com/user-attachments/assets/358e8e11-bdac-44b3-83c7-9db75b9dedf0)
-* Instruction Type : sd (Store DoubleWord) is an S-type (Store) instruction in the RISC-V ISA.
+* Instruction Type : sd (Store DoubleWord) is a S-type (Store) instruction in the RISC-V ISA.
 * sd (Store DoubleWord) is used to store a 64-bit (doubleword) value from a register into memory. It is part of the RV64I instruction set (only available in 64-bit RISC-V).
-* sp: Register x2, commonly used as stack pointer.
+* sp : Register x2, commonly used as stack pointer.
 * ra (Return Address Register): Register x1 stores the data.
 * 24 : Immediate value to add with sp.
 * Here, the instruction sd ra, 24(sp) stores the 64-bit value in ra (x1) into memory at sp + 24.
@@ -93,7 +93,7 @@ Spike is the official RISC-V ISA simulator, designed for testing and running RIS
 
 # 4. The RISC-V Assembly Instruction : jal ra,10468 <printf>
 ![Screenshot from 2025-04-02 19-17-00](https://github.com/user-attachments/assets/f3790890-a899-4492-884d-3c419ae840a7)
-* Instruction Type : jal (Jump And Link) is an J-type (Jump) instruction in the RISC-V ISA.
+* Instruction Type : jal (Jump And Link) is a J-type (Jump) instruction in the RISC-V ISA.
 * jal (Jump And Link) is used for function calls and jumps in RISC-V. It performs two actions:
   1. Saves the return address (PC + 4) into a register (rd).
   2. Jumps to a target address (PC + immediate).
@@ -107,11 +107,12 @@ Spike is the official RISC-V ISA simulator, designed for testing and running RIS
 ![Screenshot from 2025-04-02 19-17-26](https://github.com/user-attachments/assets/c2ce4284-75f3-4735-9523-d4020a1031dc)
 * Instruction Type : lw (Load Word) is an I-type (Immediate) instruction in the RISC-V ISA.
 * lw (Load Word) is used to load a 32-bit word (4 bytes) from memory into a register in the RV32I and RV64I instruction sets. It is typically used for loading data from memory into registers.
-* sp: Register x2, commonly used as stack pointer.
+* sp : Register x2, commonly used as stack pointer.
+* a2 : Register x12.
 * 12 : Immediate value to add with sp.
 * The instruction lw a2, 12(sp) loads a 32-bit word (4 bytes) from memory at sp + 12 into the register a2. 
-* 32-bit Instruction Representation : 000000001100 01100 010 00010 0000011
-![Screenshot 2025-04-02 233659](https://github.com/user-attachments/assets/3393b2c1-d1cd-4b68-b2d0-04d6e7ff796a)
+* 32-bit Instruction Representation : 000000001100 00010 010 01100 0000011
+![Screenshot 2025-04-03 003038](https://github.com/user-attachments/assets/633714bb-5cac-4a6d-8991-f1a424dfd32b)
 
 # 6. The RISC-V Assembly Instruction : mv a2,a5
 ![Screenshot from 2025-04-02 19-17-39](https://github.com/user-attachments/assets/5d92d130-ec7c-4cb1-884a-12888729f175)
@@ -121,23 +122,28 @@ Spike is the official RISC-V ISA simulator, designed for testing and running RIS
 * -32 : Immediate value to add with sp. 
 * 32-bit Instruction Representation : 111111100000 00010 000 00010 00
 
-# 7.The RISC-V Assembly Instruction : sw a4, 8(sp)
+# 7. The RISC-V Assembly Instruction : sw a4, 8(sp)
 ![Screenshot from 2025-04-02 19-17-51](https://github.com/user-attachments/assets/e075e2db-d4f8-43a0-8467-ebd0dc7e5d04)
-* Instruction Type : addi (Add Immediate) is an I-type (Immediate) instruction in the RISC-V ISA.
-* addi (Add Immediate) is used to add an immediate value (a constant) to a register.
-* sp: Register x2, commonly used as stack pointer.
-* -32 : Immediate value to add with sp. 
-* 32-bit Instruction Representation : 111111100000 00010 000 00010 0010011
+* Instruction Type : sw (Store Word) is a S-type (Store) instruction in the RISC-V ISA.
+* sw (Store Word) is used to store a 32-bit (word) value from a register into memory.
+* sp : Register x2, commonly used as stack pointer.
+* a4 : Register x14, that holds the data to be stored.
+* 8 : Immediate value to add with sp.
+* The instruction sw a4, 8(sp) stores a 32-bit word (4 bytes) from a4 into memory at sp + 8.
+* 32-bit Instruction Representation : 0000000 01110 00010 010 01000 0100011
+![Screenshot 2025-04-03 001414](https://github.com/user-attachments/assets/387232a0-00b2-452e-9fb6-94fb137c8444)
 
-# 8.The RISC-V Assembly Instruction : ld ra, 24(sp)
+# 8. The RISC-V Assembly Instruction : ld ra, 24(sp)
 ![Screenshot from 2025-04-02 19-18-10](https://github.com/user-attachments/assets/369a25d3-2f84-4b9e-8ea9-be8c8f3111dc)
-* Instruction Type : addi (Add Immediate) is an I-type (Immediate) instruction in the RISC-V ISA.
-* addi (Add Immediate) is used to add an immediate value (a constant) to a register.
-* sp: Register x2, commonly used as stack pointer.
-* -32 : Immediate value to add with sp. 
-* 32-bit Instruction Representation : 111111100000 00010 000 00010 0010011
+* Instruction Type : ld (Load Word) is an I-type (Immediate) instruction in the RISC-V ISA.
+* ld (Load Word) is used to load a 64-bit (8-byte) value from memory into a register in the RV64I instruction set. It is commonly used to retrieve data stored in memory or on the stack.
+* sp : Register x2, commonly used as stack pointer.
+* ra (Return Address Register): Register x1 is the destination.
+* 24 : Immediate value to add with sp.
+* The instruction ld ra, 24(sp) is used to load a 64-bit (doubleword) value from memory at sp + 24 into the ra (return address) register.
+* 32-bit Instruction Representation : 000000011000 00010 011 00001 0000011
 
-# 9.The RISC-V Assembly Instruction : li a0,0
+# 9. The RISC-V Assembly Instruction : li a0,0
 ![Screenshot from 2025-04-02 19-18-21](https://github.com/user-attachments/assets/f51d83f4-0a5a-4575-b0c9-c0479af3aece)
 * Instruction Type : addi (Add Immediate) is an I-type (Immediate) instruction in the RISC-V ISA.
 * addi (Add Immediate) is used to add an immediate value (a constant) to a register.
