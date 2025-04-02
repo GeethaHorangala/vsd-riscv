@@ -82,13 +82,16 @@ Spike is the official RISC-V ISA simulator, designed for testing and running RIS
 
 # 3. The RISC-V Assembly Instruction : sd ra, 24(sp)
 ![Screenshot from 2025-04-02 19-16-36](https://github.com/user-attachments/assets/358e8e11-bdac-44b3-83c7-9db75b9dedf0)
-* Instruction Type : sd (Store Double Word) is an S-type (Store) instruction in the RISC-V ISA.
-* sd (Store Double Word) is used to add an immediate value (a constant) to a register.
+* Instruction Type : sd (Store DoubleWord) is an S-type (Store) instruction in the RISC-V ISA.
+* sd (Store DoubleWord) is used to store a 64-bit (doubleword) value from a register into memory. It is part of the RV64I instruction set (only available in 64-bit RISC-V).
 * sp: Register x2, commonly used as stack pointer.
-* -32 : Immediate value to add with sp. 
-* 32-bit Instruction Representation : 111111100000 00010 000 00010 0010011
+* ra (Return Address Register): Register x1 stores the data.
+* Here, the instruction sd ra, 24(sp) stores the 64-bit value in ra (x1) into memory at sp + 24.
+* 32-bit Instruction Representation : 0000000 00001 00010 011 11000 0100011
+![Screenshot 2025-04-02 231406](https://github.com/user-attachments/assets/fe092b18-ca9e-4741-95bb-13cb4e035173)
 
-# 4.The RISC-V Assembly Instruction : jal ra,10468 <printf>
+
+# 4. The RISC-V Assembly Instruction : jal ra,10468 <printf>
 ![Screenshot from 2025-04-02 19-17-00](https://github.com/user-attachments/assets/f3790890-a899-4492-884d-3c419ae840a7)
 * Instruction Type : jal (Jump And Link) is an J-type (Jump) instruction in the RISC-V ISA.
 * jal (Jump And Link) is used for function calls and jumps in RISC-V. It performs two actions:
