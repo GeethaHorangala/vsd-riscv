@@ -111,7 +111,9 @@ Spike is the official RISC-V ISA simulator, designed for testing and running RIS
 * sp: Register x2, commonly used as stack pointer.
 * 12 : Immediate value to add with sp.
 * The instruction lw a2, 12(sp) loads a 32-bit word (4 bytes) from memory at sp + 12 into the register a2. 
-* 32-bit Instruction Representation : 111111100000 00010 000 00010 0010011
+* 32-bit Instruction Representation : 000000001100 01100 010 00010 0000011
+![Screenshot 2025-04-02 233659](https://github.com/user-attachments/assets/3393b2c1-d1cd-4b68-b2d0-04d6e7ff796a)
+
 
 # 6.The RISC-V Assembly Instruction : mv a2,a5
 ![Screenshot from 2025-04-02 19-17-39](https://github.com/user-attachments/assets/5d92d130-ec7c-4cb1-884a-12888729f175)
@@ -119,7 +121,7 @@ Spike is the official RISC-V ISA simulator, designed for testing and running RIS
 * addi (Add Immediate) is used to add an immediate value (a constant) to a register.
 * sp: Register x2, commonly used as stack pointer.
 * -32 : Immediate value to add with sp. 
-* 32-bit Instruction Representation : 111111100000 00010 000 00010 0010011
+* 32-bit Instruction Representation : 111111100000 00010 000 00010 00
 
 # 7.The RISC-V Assembly Instruction : sw a4, 8(sp)
 ![Screenshot from 2025-04-02 19-17-51](https://github.com/user-attachments/assets/e075e2db-d4f8-43a0-8467-ebd0dc7e5d04)
