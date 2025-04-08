@@ -153,5 +153,44 @@ Spike is the official RISC-V ISA simulator, designed for testing and running RIS
 * -32 : Immediate value to add with sp. 
 * 32-bit Instruction Representation : 111111100000 00010 000 00010 0010011
 
- 
-  
+# Task 4 : Functional Simulation of RISC-V Core
+# Overview
+This task involved performing functional simulation of the given RISC-V Core Verilog netlist and testbench and checking the functional correctness of the core by observing the output signals.
+
+# Reference Verilog Code
+![Screenshot 2025-04-08 211839](https://github.com/user-attachments/assets/5c2dd6dd-1ad4-434b-99ac-a6ba40f7195e)
+
+# GTKWave Output Waveform
+# Instruction 1 : add r6,r1,r2
+![Screenshot (34)](https://github.com/user-attachments/assets/1d010921-8064-4802-b35a-bc42366fad04)
+
+# Instruction 2 : sub r7,r1,r2
+![Screenshot (36)](https://github.com/user-attachments/assets/54c1c569-af67-4581-bf4b-6fbd7e52febf)
+
+# Instruction 3 : and r8,r1,r3
+![Screenshot (38)](https://github.com/user-attachments/assets/97582ebc-66da-4c08-be87-55b5a86fa83c)
+
+# Instruction 4 : or r9,r2,r5
+![Screenshot (39)](https://github.com/user-attachments/assets/a8069532-d02d-46fc-8107-c0d8994033a4)
+
+# Instruction 5 : xor r10,r1,r4
+![Screenshot (40)](https://github.com/user-attachments/assets/04fbcf19-8475-402e-ab3f-3019524d044c)
+
+# Instruction 6 : slt r11,r2,r4
+![Screenshot (41)](https://github.com/user-attachments/assets/30ba3149-8388-45f9-a87f-f536959e5a21)
+
+# Instruction 7 : addi r12,r4,5
+![Screenshot (49)](https://github.com/user-attachments/assets/457dba96-c9d5-449b-9e22-d5887169f74c)
+
+# Instruction 8 : sw r3,r1,2
+![Screenshot (48)](https://github.com/user-attachments/assets/79ec09c6-200c-469d-bee1-07c012166f2a)
+
+# Instruction 9 : lw r13,r1,2
+![Screenshot (47)](https://github.com/user-attachments/assets/e065fdef-c94c-40fa-b92b-2ff4910ec52e)
+
+# Instruction 10 : beq r0,r0,15
+![Screenshot (44)](https://github.com/user-attachments/assets/1a03774b-dcef-4c52-a5ad-33ad620a0f2c)
+
+# Instruction 11 : add r14,r2,r2
+![Screenshot (46)](https://github.com/user-attachments/assets/387f8623-f50c-47d8-b3d0-40a708f9347d)
+
