@@ -189,7 +189,7 @@ This task involved performing functional simulation of the given RISC-V Core Ver
 ![Screenshot (47)](https://github.com/user-attachments/assets/e065fdef-c94c-40fa-b92b-2ff4910ec52e)
 
 # Instruction 10 : beq r0,r0,15
-![Screenshot (44)](https://github.com/user-attachments/assets/1a03774b-dcef-4c52-a5ad-33ad620a0f2c)
+![Screenshot (50)](https://github.com/user-attachments/assets/ae9216b0-69e0-4390-8bd6-b0ee16af8ce8)
 
 # Instruction 11 : add r14,r2,r2
 ![Screenshot (46)](https://github.com/user-attachments/assets/387f8623-f50c-47d8-b3d0-40a708f9347d)
