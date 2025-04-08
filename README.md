@@ -116,11 +116,13 @@ Spike is the official RISC-V ISA simulator, designed for testing and running RIS
 
 # 6. The RISC-V Assembly Instruction : mv a2,a5
 ![Screenshot from 2025-04-02 19-17-39](https://github.com/user-attachments/assets/5d92d130-ec7c-4cb1-884a-12888729f175)
-* Instruction Type : addi (Add Immediate) is an I-type (Immediate) instruction in the RISC-V ISA.
-* addi (Add Immediate) is used to add an immediate value (a constant) to a register.
-* sp: Register x2, commonly used as stack pointer.
-* -32 : Immediate value to add with sp. 
-* 32-bit Instruction Representation : 111111100000 00010 000 00010 00
+* Instruction Type : The mv instruction is a pseudo-instruction in RISC-V that performs a register-to-register copy.
+* a5 : source register (Register x15)
+* a2 : destination register (Register x12)
+* This instruction copies the value in register a5 into a2.
+* mv a2, a5 is a pseudo-instruction, which the assembler translates to: addi a2, a5, 0
+* addi (Add Immediate) is an I-type (Immediate) instruction in the RISC-V ISA.
+* 32-bit Instruction Representation : 01100 0010011
 
 # 7. The RISC-V Assembly Instruction : sw a4, 8(sp)
 ![Screenshot from 2025-04-02 19-17-51](https://github.com/user-attachments/assets/e075e2db-d4f8-43a0-8467-ebd0dc7e5d04)
