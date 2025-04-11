@@ -197,3 +197,15 @@ This task involved performing functional simulation of the given RISC-V Core Ver
 # Task 5 : Obstacle Detection and Visual-Audio Alert System using VSDSquadron Mini 
 # Overview
 This project uses an ultrasonic sensor (HC-SR04) interfaced with the VSD Squadron Mini board to detect obstacles. If an object is detected within a threshold distance, the system triggers a buzzer and red LED to alert the driver, signaling the vehicle must stop. If the path is clear, a green LED lights up indicating it's safe to move. This system is ideal for smart vehicle safety or autonomous robots.
+
+# Hardware Components:
+![Screenshot 2025-04-11 173448](https://github.com/user-attachments/assets/534877ba-9c4a-4f99-8dad-f967129310ee)
+
+# Pin Diagram:
+![Screenshot 2025-04-11 171700](https://github.com/user-attachments/assets/1ab542d2-2d7b-44c3-9008-3d51b91bae69)
+
+# Circuit Diagram:
+![Screenshot 2025-04-11 164238](https://github.com/user-attachments/assets/a66d53ca-d772-42aa-9843-fd3aef92fa95)
+
+# Pin Connections:
+![Screenshot 2025-04-11 174141](https://github.com/user-attachments/assets/52706ee6-aeb8-42fc-a691-dbc0b26953bf)
