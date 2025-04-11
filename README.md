@@ -157,8 +157,29 @@ Spike is the official RISC-V ISA simulator, designed for testing and running RIS
 # Overview
 This task involved performing functional simulation of the given RISC-V Core Verilog netlist and testbench and checking the functional correctness of the core by observing the output signals.
 
+# 1. Introduction to Verilog
+Verilog is a hardware description language (HDL) used to model and design digital systems such as processors, memory modules, and logic circuits. It allows designers to describe hardware behavior and structure, making it a key tool in digital electronics and embedded systems.
+
+# 2. Verilog Netlist
+A netlist in Verilog is a detailed representation of a digital circuit in terms of its components and the connections (nets) between them. It specifies how elements such as logic gates and modules are interconnected. Netlists are either manually written using structural Verilog or automatically generated using synthesis tools. They serve as the foundation for simulation and verification before deploying a design on actual hardware.
+
+# 3. Verilog Testbench
+A testbench is a non-synthesizable Verilog module used to verify and test the functionality of a design. It simulates the environment in which the actual hardware will operate by applying various input combinations and observing the outputs. The testbench doesn't represent real hardware; instead, it automates testing by using simulation tools. It typically includes initial blocks for defining signal behavior over time and uses system tasks like $display and $dumpfile to monitor and record simulation results.
+
+# 4. Icarus Verilog
+Icarus Verilog is an open-source Verilog compiler and simulator. It compiles Verilog source files and testbenches into an intermediate simulation format and then runs the simulation to check the logic and timing of the design. It is widely used for educational purposes due to its simplicity, efficiency, and compatibility with all major operating systems. Icarus Verilog supports simulation of both behavioral and structural Verilog code.
+
+# 5. GTKWave
+GTKWave is a waveform viewer that is used to analyze the simulation results visually. It displays changes in signals over time in the form of waveforms. GTKWave reads data from .vcd (Value Change Dump) files generated during simulation and helps designers debug, analyze, and validate the logic by examining how input and output signals behave over a simulated time period.
+
+# 6. Complete Design Flow Summary
+The typical digital design flow using Verilog starts with writing the Verilog module (design), followed by creating a testbench for simulation. The design and testbench are compiled using Icarus Verilog, and the simulation output is stored in a .vcd file. Finally, this file is opened with GTKWave to analyze signal waveforms and verify that the design behaves as expected. This flow is crucial in ensuring that digital circuits are functionally correct before hardware implementation.
+
 # Reference Verilog Code
 ![Screenshot 2025-04-08 211839](https://github.com/user-attachments/assets/5c2dd6dd-1ad4-434b-99ac-a6ba40f7195e)
+
+# Commands to get GTKWave
+![cmd](https://github.com/user-attachments/assets/b53b6a8e-f85d-46a1-8c80-0470d7d32ded)
 
 # GTKWave Output Waveform
 # Instruction 1 : add r6,r1,r2
@@ -200,6 +221,27 @@ This project uses an ultrasonic sensor (HC-SR04) interfaced with the VSD Squadro
 
 # Hardware Components:
 ![Screenshot 2025-04-11 173448](https://github.com/user-attachments/assets/534877ba-9c4a-4f99-8dad-f967129310ee)
+
+# Hardware Description:
+# 1.VSD Squadron Mini (RISC-V Board):
+![IMG-20250410-WA0067](https://github.com/user-attachments/assets/7e8f2e38-ec55-4ba0-a48f-bf1b75f8c378)
+
+The VSD Squadron Mini is a compact development board based on the RISC-V open-source architecture. It is used for learning embedded systems and digital design. The board includes GPIO pins to connect sensors, LEDs, buzzers, and more. It is ideal for hands-on projects and experimentation with the RISC-V toolchain.
+
+# 2.Ultrasonic Sensor (HC-SR04):
+![hc-sr04-ultrasonic-sensor](https://github.com/user-attachments/assets/03a90d25-114b-492c-8a40-87fec9acb11b)
+
+The HC-SR04 is a popular ultrasonic distance sensor used to measure the distance between the sensor and an object using sound waves. It has four pins (VCC, GND, Trig, Echo) and can measure distances from 2 cm to 400 cm with good accuracy. Commonly used in obstacle detection and robot navigation.
+
+# 3.Buzzer:
+![buzzer](https://github.com/user-attachments/assets/55411ae9-ae2a-4d82-be4b-095e9bc7bcc3)
+
+A buzzer is an electronic component that produces sound when voltage is applied. It is used for audio alerts or notifications in systems. In this project, the buzzer is activated when an obstacle is detected nearby.
+
+# 4.LED (Light Emitting Diode):
+![led](https://github.com/user-attachments/assets/c6139f77-1ef6-40db-99c4-a15bdd65f9af)
+
+An LED is a light-emitting device used to indicate status or output. A Red LED is used to indicate danger or obstacle detection, while a Green LED indicates safety or no obstacles. A 220-ohm resistor is usually connected in series to limit current.
 
 # Pin Diagram:
 ![Screenshot 2025-04-11 171700](https://github.com/user-attachments/assets/1ab542d2-2d7b-44c3-9008-3d51b91bae69)
