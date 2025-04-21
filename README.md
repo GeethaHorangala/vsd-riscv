@@ -254,3 +254,107 @@ An LED is a light-emitting device used to indicate status or output. A Red LED i
 
 # Task 6 : Project Video
 https://drive.google.com/file/d/1aMHbqK383fPR0MHRuOrs2yzE0XmoX5ZT/view?usp=drivesdk
+# C Code
+#include "debug.h"
+#include "ch32v00x_gpio.h"
+#include "ch32v00x_rcc.h"
+
+#define ECHO_PIN GPIO_Pin_2 // PD2
+#define TRIG_PIN GPIO_Pin_3 // PD3
+#define RED_LED_PIN GPIO_Pin_4// PD4
+#define GREEN_LED_PIN GPIO_Pin_1// PD7
+#define BUZZER_PIN GPIO_Pin_6 //PD6
+
+void delay_us(uint32_t us) {
+    // Implement a microsecond delay function based on your system clock
+    // For example, using a simple loop calibrated for your clock speed
+    while(us--) {
+        for(volatile int i = 0; i < 10; i++);
+    }
+}
+
+void delay_ms(uint32_t ms) {
+    // Implement a millisecond delay function based on your system clock
+    while(ms--) {
+        delay_us(1000);
+    }
+}
+
+void setup() {
+    SystemInit();
+    Delay_Init();
+    USART_Printf_Init(9600);
+
+    GPIO_InitTypeDef GPIO_InitStructure;
+
+    // Enable GPIO Port D Clock
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE);
+
+    // Configure TRIG_PIN as output push-pull
+    GPIO_InitStructure.GPIO_Pin = TRIG_PIN;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+    GPIO_Init(GPIOD, &GPIO_InitStructure);
+
+    // Configure ECHO_PIN as input floating
+    GPIO_InitStructure.GPIO_Pin = ECHO_PIN;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+    GPIO_Init(GPIOD, &GPIO_InitStructure);
+
+    GPIO_InitStructure.GPIO_Pin = RED_LED_PIN | GREEN_LED_PIN | BUZZER_PIN;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+    GPIO_Init(GPIOD, &GPIO_InitStructure);
+}
+
+uint32_t measure_distance() {
+    uint32_t duration = 0;
+
+    // Send a 10us pulse to trigger the sensor
+    GPIO_ResetBits(GPIOD, TRIG_PIN);
+    delay_us(2);
+    GPIO_SetBits(GPIOD, TRIG_PIN);
+    delay_us(10);
+    GPIO_ResetBits(GPIOD, TRIG_PIN);
+
+    // Wait for ECHO_PIN to go high
+    while (!GPIO_ReadInputDataBit(GPIOD, ECHO_PIN));
+
+    // Measure the duration of the high pulse on ECHO_PIN
+    while (GPIO_ReadInputDataBit(GPIOD, ECHO_PIN)) {
+        duration++;
+        delay_us(1);
+    }
+
+    // Calculate distance in centimeters
+    uint32_t distance_cm = (duration * 343) / 2000;  // (34300 cm/s = 343 m/s)
+
+
+    return distance_cm;
+}
+
+int main() {
+    setup();
+    printf("here");
+    while (1) {
+        uint32_t distance = measure_distance();
+        printf("Distance: %lu cm\n", distance);
+        delay_ms(500);
+        if (distance <= 5) {
+            printf("red\n");
+            GPIO_SetBits(GPIOD, RED_LED_PIN);
+            GPIO_ResetBits(GPIOD, GREEN_LED_PIN);  // Turn OFF green
+            GPIO_SetBits(GPIOD, BUZZER_PIN);
+        } else {
+            printf("green\n");
+            GPIO_SetBits(GPIOD, GREEN_LED_PIN);
+            GPIO_ResetBits(GPIOD, RED_LED_PIN);    // Turn OFF red
+            GPIO_ResetBits(GPIOD, BUZZER_PIN);
+        }
+
+        delay_ms(500);
+    }
+    return 0;
+    }
+
+    
