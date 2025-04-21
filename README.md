@@ -251,3 +251,6 @@ An LED is a light-emitting device used to indicate status or output. A Red LED i
 
 # Pin Connections:
 ![Screenshot 2025-04-11 174141](https://github.com/user-attachments/assets/52706ee6-aeb8-42fc-a691-dbc0b26953bf)
+
+# Task 6 : Project Video
+https://drive.google.com/file/d/1aMHbqK383fPR0MHRuOrs2yzE0XmoX5ZT/view?usp=drivesdk
